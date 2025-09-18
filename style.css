@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
@@ -55,6 +55,22 @@ nav {
   color: inherit;
   border: 1px solid #fff;
   transition: all 0.3s;
+}
+
+.create_account{
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 10rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+  background-color: #39b385;
+  color: white;
 }
 
 .login__input:focus {
@@ -136,6 +152,11 @@ nav {
   align-items: center;
   border-bottom: 1px solid #eee;
 }
+
+
+
+
+
 
 .movements__type {
   font-size: 1.1rem;
