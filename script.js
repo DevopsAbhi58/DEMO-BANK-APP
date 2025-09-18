@@ -90,7 +90,34 @@ const displayMovements = function (movements, sort = false) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
+btnCreate.addEventListener('click', function (e) {
+  e.preventDefault();
 
+  const createUser = prompt('Enter your name to create an account');
+  const createPin = Number(prompt('Enter a 4 digit pin'));
+  const createInterest = Number(prompt('Enter your interest rate'));
+  const createMovements = prompt([]);
+
+  console.log(createMovements);
+
+  if (createUser && createPin && createInterest) {
+    const newAccount = {
+      owner: createUser,
+      movements: createMovements ? createMovements.split(',').map(Number) : [],
+      interestRate: createInterest,
+      pin: createPin,
+    };
+    accounts.push(newAccount);
+    createUsernames(accounts);
+    movements.push(createMovements);
+    console.log(accounts);
+    alert(
+      `Account created successfully! Your username is ${newAccount.username}`
+    );
+  } else {
+    alert('Invalid input! Please try again.');
+  }
+});
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${acc.balance}€`;
